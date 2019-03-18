@@ -4,6 +4,8 @@ import org.htlinking.Offers.Offers;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.HashMap;
+import java.util.Map;
 
 public class User {
 
@@ -12,6 +14,7 @@ public class User {
     private String password = null;
     private PublicKey pubKey = null;
     private PrivateKey priKey = null;
+    private Map<String, Offers> registrOfertas = new HashMap<>();
 
     //Setters
 
@@ -92,6 +95,16 @@ public class User {
     }
 
     public String promocionalCode(String code, Offers offers){
-        return offers.selectOffer(code) + getPubKey();
+        return offers.selectOffer(code) + getPubKey().hashCode();
+    }
+
+    public void saveOffers(String code, Offers offers){
+        if (offers.getDataBase().containsKey(code)){
+            getRegistrOfertas().putIfAbsent(getName(),offers);}
+
+    }
+
+    public Map<String,Offers> getRegistrOfertas(){
+        return this.registrOfertas;
     }
 }
