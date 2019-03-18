@@ -50,11 +50,11 @@ public class Offers {
     }
 
     public String selectOffer(String code){
-        return getDataBase().get(code);
-    }
-
-    public String promocionalCode(String code){
-        return "hola";
+        if(getDataBase().containsKey(code)){
+            return code;
+        }
+        String error = "Este codigo no existe";
+        return error;
     }
 
 }
