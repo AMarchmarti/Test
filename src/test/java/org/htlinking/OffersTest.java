@@ -31,4 +31,15 @@ public class OffersTest {
         //System.out.println(offers.getDescription());
         System.out.println(offers.accesDB());
     }
+
+    @Test
+    public void selectTest(){
+        offers.setPrefix("VKG");
+        offers.setOferta("Fiordos y la Aurora boreal: \nCanjeando este cupón obtendrás un 30% de " +
+                "descuento en un viaje preparado para poder sentir en tus pieles la tierra de los vikingos. \n" +
+                "Con este viaje entra el vuelo, la estancia y además una visita guiada por las tierras del norte.  " +
+                "Abriguense bien!");
+        offers.addDataBase(offers.getPrefix(), offers.getOferta());
+        offers.selectOffer("VFG");
+    }
 }
