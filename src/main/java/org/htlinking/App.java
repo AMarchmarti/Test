@@ -1,6 +1,7 @@
 package org.htlinking;
 
 
+import org.htlinking.Users.Login;
 import org.htlinking.Users.Register;
 import org.htlinking.Users.User;
 
@@ -17,13 +18,14 @@ public class App {
         Boolean enter = false;
         while (!enter){
             System.out.println("Bienvenido a nuestra plataforma de adquisición de ofertas para fabulosos viajes, hoteles" +
-                    "entre otras experiencias. \n" +
+                    " entre otras experiencias. \n");
+                    /*+
                     "¿Desea registrarse? Si o No");
 
             String respuesta = scanner.nextLine();
 
             if (respuesta.toLowerCase().equals("si")) {
-
+*/
                 System.out.println("Nombre:");
                 String name = scanner.nextLine();
                 user.setName(name);
@@ -41,26 +43,34 @@ public class App {
 
 
                 user.registerUser(rpass, registro);
-                enter = true;
 
-            } else if (respuesta.toLowerCase().equals("no")) {
+
+            //} else if (respuesta.toLowerCase().equals("no")) {
 
         /* Segunda historia de usuario: Como usuario registrado deseo loggear para ver las ofertas*/
 
 
                 System.out.println("¿Quiere loggear?");
-                String loginin = scanner.nextLine();
+                //String loginin = scanner.nextLine();
 
-                if (loginin.toLowerCase().equals("si")) {
-                    //login
-                    enter = true;
-                }
+                //if (loginin.toLowerCase().equals("si")) {
+                    System.out.println("Introduzca Email:");
+                    String emaildos = scanner.nextLine();
+
+                    System.out.println("Introduzca Contraseña:");
+                    String password = scanner.nextLine();
+
+
+                    user.loginValid(emaildos, password);
+
+                    //enter = true;
+               /* }
                 else {
                     System.out.println("Pase un buen día, Adiós");
-                    break;
+                    break;*/
                 }
             }
 
 
         }
-}}
+
