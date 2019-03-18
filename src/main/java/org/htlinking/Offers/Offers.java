@@ -57,4 +57,13 @@ public class Offers {
     public void addDataBase(String prefix, String[] ofertas){
         getDataBase().putIfAbsent(prefix, ofertas);
     }
+
+    public String accesDB(){
+        String total = "Ofertas: \n";
+        for(String [] array : getDataBase().values()){
+            total +=  array[0] + ": " + array[1];
+        }
+        return total;
+    }
+
 }
