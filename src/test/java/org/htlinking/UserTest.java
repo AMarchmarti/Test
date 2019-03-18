@@ -21,4 +21,11 @@ public class UserTest
     public void constructorTest(){
         assertNotNull(user);
     }
+
+    @Test
+    public void getTest(){
+        assertNotNull(user.getName());
+        assertNotNull(user.getEmail());
+        assertNotNull(user.getPassword());
+    }
 }
