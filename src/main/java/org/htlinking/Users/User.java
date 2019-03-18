@@ -87,6 +87,6 @@ public class User {
     }
 
     public void showOffers(Offers offers){
-        offers.toString();
+        System.out.println(offers.accesDB());
     }
 }
