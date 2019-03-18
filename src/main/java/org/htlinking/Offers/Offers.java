@@ -6,21 +6,15 @@ import java.util.Map;
 
 public class Offers {
 
-    private String name = null;
-    private String description = null;
+    private String oferta = null;
     private String prefix = null;
-    private String[] ofertas = new String[2];
-    private Map<String, String[]> dataBase = new HashMap<>();
+    private Map<String, String> dataBase = new HashMap<>();
 
     //Setters
 
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOferta(String oferta) {
+        this.oferta = oferta;
     }
 
     public void setPrefix(String prefix) {
@@ -29,39 +23,28 @@ public class Offers {
 
     //Getters
 
-    public String getName() {
-        return name;
-    }
 
-    public String getDescription() {
-        return description;
+    public String getOferta() {
+        return oferta;
     }
 
     public String getPrefix() {
         return prefix;
     }
 
-    public String[] getOfertas() {
-        return ofertas;
-    }
-
-    public Map<String, String[]> getDataBase() {
+    public Map<String, String> getDataBase() {
         return dataBase;
     }
 
-    public void addOffers(String name, String description){
-        getOfertas()[0] = name;
-        getOfertas()[1] = description;
-    }
 
-    public void addDataBase(String prefix, String[] ofertas){
-        getDataBase().putIfAbsent(prefix, ofertas);
+    public void addDataBase(String prefix, String offer){
+        getDataBase().putIfAbsent(prefix, offer);
     }
 
     public String accesDB(){
         String total = "Ofertas: \n";
-        for(String [] array : getDataBase().values()){
-            total +=  array[0] + ": " + array[1];
+        for(String offer : getDataBase().values()){
+            total += offer + "\n";
         }
         return total;
     }
