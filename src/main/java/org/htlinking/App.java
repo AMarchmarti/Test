@@ -45,6 +45,9 @@ public class App {
 
             } else if (respuesta.toLowerCase().equals("no")) {
 
+        /* Segunda historia de usuario: Como usuario registrado deseo loggear para ver las ofertas*/
+
+
                 System.out.println("¿Quiere loggear?");
                 String loginin = scanner.nextLine();
 
