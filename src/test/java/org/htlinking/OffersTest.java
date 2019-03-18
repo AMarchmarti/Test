@@ -30,6 +30,7 @@ public class OffersTest {
         offers.addDataBase(offers.getPrefix(), offers.getOfertas());
         assertNotNull(offers.getOfertas());
         assertNotNull(offers.getDataBase());
-        System.out.println(offers.getDescription());
+        //System.out.println(offers.getDescription());
+        System.out.println(offers.accesDB());
     }
 }
