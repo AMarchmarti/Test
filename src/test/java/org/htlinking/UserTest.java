@@ -61,5 +61,7 @@ public class UserTest
                 "Abriguense bien!");
         offers.addDataBase(offers.getPrefix(), offers.getOferta());
         System.out.println(user.promocionalCode("VKG", offers));
+        user.saveOffers("VKG", offers);
+        assertNotNull(user.getRegistrOfertas());
     }
 }
