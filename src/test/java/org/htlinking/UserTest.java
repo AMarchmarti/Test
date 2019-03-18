@@ -1,20 +1,24 @@
 package org.htlinking;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import org.htlinking.Users.User;
+import org.junit.Before;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+public class UserTest
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
+    private User user = null;
+
+    @Before
+    public void __init__()
     {
-        assertTrue( true );
+        user = new User("Antoni", "test@gmail.com", "12345678");
+
+    }
+
+    @Test
+    public void constructorTest(){
+        assertNotNull(user);
     }
 }
