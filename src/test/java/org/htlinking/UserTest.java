@@ -2,6 +2,7 @@ package org.htlinking;
 
 import static org.junit.Assert.*;
 
+import org.htlinking.Users.Login;
 import org.htlinking.Users.Register;
 import org.htlinking.Users.User;
 import org.junit.Before;
@@ -11,12 +12,14 @@ public class UserTest
 {
     private User user = null;
     private Register regis = null;
+    private Login login = null;
 
     @Before
     public void __init__()
     {
         user = new User();
         regis = new Register();
+        login = new Login();
         user.setName("Edu");
         user.setEmail("Toni");
         user.setPassword("12345678");
