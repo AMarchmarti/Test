@@ -11,15 +11,20 @@ public class User {
     private PublicKey pubKey = null;
     private PrivateKey priKey = null;
 
-    //Constructor
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-
     //Setters
 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void setPubKey(PublicKey pubKey) {
         this.pubKey = pubKey;
@@ -63,7 +68,7 @@ public class User {
     }
 
     public void validateUser(String password){
-        if (password == getPassword()){
+        if (password.equals(getPassword())){
             System.out.println("Ha sido registrado correctamente, mire las ofertas.");
             //ir a ofertas
         }else{
