@@ -1,6 +1,7 @@
 package org.htlinking;
 
 
+import org.htlinking.Offers.Offers;
 import org.htlinking.Users.Login;
 import org.htlinking.Users.Register;
 import org.htlinking.Users.User;
@@ -12,9 +13,31 @@ public class App {
 
         Register registro = new Register();
         User user = new User();
+        Offers offer = new Offers();
+        Scanner scanner = new Scanner(System.in);
+
+
+        //Base de datos de la ofertas
+        offer.setName("Fiordos y la Aurora boreal");
+        offer.setDescription("Canjeando este cupón obtendrás un 30% de " +
+                "descuento en un viaje preparado para poder sentir en tus pieles la tierra de los vikingos. \n" +
+                "Con este viaje entra el vuelo, la estancia y además una visita guiada por las tierras del norte.  " +
+                "Abriguense bien!");
+        offer.setPrefix("VKG");
+        offer.addOffers(offer.getName(),offer.getDescription());
+        offer.addDataBase(offer.getPrefix(),offer.getOfertas());
+
+        offer.setName("La Tierra Media");
+        offer.setDescription("Canjeando este cupón obtendrás un 15% de descuento en un viaje para ver la Tierra dónde " +
+                "se rodo el Señor de Los Anillos, \nademás incluye, con todos los gastos pagados, un tour por las zonas " +
+                "dónde se rodaron las películas. \nImagínate estar en la Comarca o ver las praderas de Rohan. Si eres un " +
+                "fan de estas magnífica saga no lo dudes, aprovecha esta oportunidad.");
+        offer.setPrefix("TLotR");
+        offer.addOffers(offer.getName(),offer.getDescription());
+        offer.addDataBase(offer.getPrefix(),offer.getOfertas());
 
         /* Primera historia de usuario: Como Usuario que quiere adquirir ofertas deseo poder registrarme*/
-        Scanner scanner = new Scanner(System.in);
+
         Boolean enter = false;
         while (!enter){
             System.out.println("Bienvenido a nuestra plataforma de adquisición de ofertas para fabulosos viajes, hoteles" +
@@ -68,6 +91,11 @@ public class App {
                 else {
                     System.out.println("Pase un buen día, Adiós");
                     break;*/
+
+    //Tercera historia de usuario: Como usuario quiero poder visualizar las ofertas existentes para poder seleccionarlas
+
+
+
                 }
             }
 
