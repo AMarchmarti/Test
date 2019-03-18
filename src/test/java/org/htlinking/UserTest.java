@@ -12,14 +12,12 @@ public class UserTest
 {
     private User user = null;
     private Register regis = null;
-    private Login login = null;
 
     @Before
     public void __init__()
     {
         user = new User();
         regis = new Register();
-        login = new Login();
         user.setName("Edu");
         user.setEmail("Toni");
         user.setPassword("12345678");
@@ -46,4 +44,9 @@ public class UserTest
         user.registerUser(pass,regis);
         assertNotNull(regis);
     }
+
+    @Test
+    public void loginTest(){
+        regis.register(user);
+        assertTrue(Login.login(user.getEmail(), user.getPassword(), user));}
 }
