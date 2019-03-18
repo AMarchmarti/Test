@@ -66,6 +66,7 @@ public class User {
     public void registerUser(String pass, Register register){
         register.register(this);
         validateUser(pass);
+        generateKeyPair();
 
     }
 
@@ -88,5 +89,9 @@ public class User {
 
     public void showOffers(Offers offers){
         System.out.println(offers.accesDB());
+    }
+
+    public String promocionalCode(String code, Offers offers){
+        return offers.selectOffer(code) + getPubKey();
     }
 }
