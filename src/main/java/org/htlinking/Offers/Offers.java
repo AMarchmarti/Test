@@ -43,10 +43,18 @@ public class Offers {
 
     public String accesDB(){
         String total = "Ofertas: \n";
-        for(String offer : getDataBase().values()){
-            total += offer + "\n";
+        for(String key : getDataBase().keySet()){
+            total += getDataBase().get(key) + "\n" + " Para canjear el cupón introduzca el prefijo " + key + " \n";
         }
         return total;
+    }
+
+    public String selectOffer(String code){
+        return getDataBase().get(code);
+    }
+
+    public String promocionalCode(String code){
+        return "hola";
     }
 
 }
