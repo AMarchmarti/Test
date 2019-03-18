@@ -75,4 +75,13 @@ public class User {
             System.out.println("Se ha equivocado de contraseña");
         }
     }
+
+    public void loginValid(String email, String pass){
+        if(Login.login(email,pass,this)){
+            System.out.println("Bienvenido, " + getName() +"." + " \nDebería revisar las nuevas ofertas que ofrecemos");
+        }else{
+            System.out.println("Credenciales erroneas, por favor introduzca nuevamente");
+        }
+
+    }
 }
