@@ -1,5 +1,7 @@
 package org.htlinking.Users;
 
+import org.htlinking.Offers.Offers;
+
 import java.security.PrivateKey;
 import java.security.PublicKey;
 
@@ -82,6 +84,9 @@ public class User {
         }else{
             System.out.println("Credenciales erroneas, por favor introduzca nuevamente");
         }
+    }
 
+    public void showOffers(Offers offers){
+        offers.toString();
     }
 }
