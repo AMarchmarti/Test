@@ -18,23 +18,17 @@ public class App {
 
 
         //Base de datos de la ofertas
-        offer.setName("Fiordos y la Aurora boreal");
-        offer.setDescription("Canjeando este cupón obtendrás un 30% de " +
+
+        offer.addDataBase("VKG","-Fiordos y la Aurora boreal:\n Canjeando este cupón obtendrás un 30% de " +
                 "descuento en un viaje preparado para poder sentir en tus pieles la tierra de los vikingos. \n" +
                 "Con este viaje entra el vuelo, la estancia y además una visita guiada por las tierras del norte.  " +
                 "Abriguense bien!");
-        offer.setPrefix("VKG");
-        offer.addOffers(offer.getName(),offer.getDescription());
-        offer.addDataBase(offer.getPrefix(),offer.getOfertas());
 
-        offer.setName("La Tierra Media");
-        offer.setDescription("Canjeando este cupón obtendrás un 15% de descuento en un viaje para ver la Tierra dónde " +
+
+        offer.addDataBase("TLotR","-La Tierra Media:\n Canjeando este cupón obtendrás un 15% de descuento en un viaje para ver la Tierra dónde " +
                 "se rodo el Señor de Los Anillos, \nademás incluye, con todos los gastos pagados, un tour por las zonas " +
                 "dónde se rodaron las películas. \nImagínate estar en la Comarca o ver las praderas de Rohan. Si eres un " +
-                "fan de estas magnífica saga no lo dudes, aprovecha esta oportunidad.");
-        offer.setPrefix("TLotR");
-        offer.addOffers(offer.getName(),offer.getDescription());
-        offer.addDataBase(offer.getPrefix(),offer.getOfertas());
+                "fan de estas magnífica saga no lo dudes, aprovecha esta oportunidad.");;
 
         /* Primera historia de usuario: Como Usuario que quiere adquirir ofertas deseo poder registrarme*/
 
@@ -94,7 +88,13 @@ public class App {
 
     //Tercera historia de usuario: Como usuario quiero poder visualizar las ofertas existentes para poder seleccionarlas
 
-
+            System.out.println("Desea ver las ofertas que tenemos? Si o No");
+            if (scanner.nextLine().equals("si")){
+                user.showOffers(offer);
+            }else{
+                System.out.println("Muchas gracias por visitarnos vuelve cuando quiera. Adiós");
+                break;
+            }
 
                 }
             }
