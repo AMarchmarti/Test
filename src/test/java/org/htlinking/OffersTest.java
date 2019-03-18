@@ -21,14 +21,12 @@ public class OffersTest {
     @Test
     public void arrayTest(){
         offers.setPrefix("VKG");
-        offers.setName("Fiordos y la Aurora boreal");
-        offers.setDescription("Canjeando este cupón obtendrás un 30% de " +
+        offers.setOferta("Fiordos y la Aurora boreal: \nCanjeando este cupón obtendrás un 30% de " +
                 "descuento en un viaje preparado para poder sentir en tus pieles la tierra de los vikingos. \n" +
                 "Con este viaje entra el vuelo, la estancia y además una visita guiada por las tierras del norte.  " +
                 "Abriguense bien!");
-        offers.addOffers(offers.getName(),offers.getDescription() );
-        offers.addDataBase(offers.getPrefix(), offers.getOfertas());
-        assertNotNull(offers.getOfertas());
+        offers.addDataBase(offers.getPrefix(), offers.getOferta());
+        assertNotNull(offers.getOferta());
         assertNotNull(offers.getDataBase());
         //System.out.println(offers.getDescription());
         System.out.println(offers.accesDB());
