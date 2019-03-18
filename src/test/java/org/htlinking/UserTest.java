@@ -15,15 +15,15 @@ public class UserTest
     @Before
     public void __init__()
     {
-        user = new User("Antoni", "test@gmail.com", "12345678");
+        user = new User();
         regis = new Register();
+        user.setName("Edu");
+        user.setEmail("Toni");
+        user.setPassword("12345678");
 
     }
 
-    @Test
-    public void constructorTest(){
-        assertNotNull(user);
-    }
+
 
     @Test
     public void getTest(){
