@@ -12,7 +12,6 @@ public class App {
     public static void main(String[] args) {
 
         Register registro = new Register();
-        User user = new User();
         Offers offer = new Offers();
         Scanner scanner = new Scanner(System.in);
 
@@ -37,6 +36,7 @@ public class App {
         while (!enter) {
             System.out.println("Bienvenido a nuestra plataforma de adquisición de ofertas para fabulosos viajes, hoteles" +
                     " entre otras experiencias. \n");
+            User user = new User();
                     /*+
                     "¿Desea registrarse? Si o No");
 
@@ -103,8 +103,9 @@ public class App {
 
         System.out.println("Selecciona la oferta o ofertas que mas te gusten solo tienes que escribir su código y recibirá" +
                 "su código promocional");
-                System.out.println("Introduzca su código: ");
             System.out.println(user.promocionalCode(scanner.nextLine(),offer));
+                System.out.println("Introduzca su código: ");
+            //System.out.println(user.promocionalCode(scanner.nextLine(),offer));
                 user.saveOffers(scanner.nextLine(),offer);
                 System.out.println("¿Desea alguno más?");
             while (true){
@@ -117,7 +118,7 @@ public class App {
                     System.out.println("Tus datos han sido registrados");
                     break;
                 }
-            }}
+            }break;}
 
     }
 }
